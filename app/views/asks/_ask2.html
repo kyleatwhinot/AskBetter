@@ -1,0 +1,13 @@
+<%= form_for(@ask) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	#STUB FOR ASK DESCRIPTION
+    <em><%= f.label :helper, "Who do you want to ASK?" %></em>
+    <%= f.text_field :helper, placeholder: "name" %>
+    
+    <em><%= f.label :public, "Make this ask public?" %></em>
+    <%= f.check_box :public, {:checked=>true} %>
+  </div>
+  <%= f.submit "Skip", class: "btn btn-link" %>
+  <%= f.submit "Save", class: "btn btn-success" %>
+<% end %>

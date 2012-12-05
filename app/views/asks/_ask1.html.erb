@@ -1,0 +1,7 @@
+<%= form_for(@ask) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.text_field :description, placeholder: "lorem ipsum..." %>
+  </div>
+  <%= f.submit "Add a need", class: "btn btn-success" %>
+<% end %>

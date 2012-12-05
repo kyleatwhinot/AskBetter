@@ -1,0 +1,31 @@
+<%= form_for(@ask) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+  	#STUB FOR ASK DESCRIPTION
+  	#STUB FOR ASK CONTACT
+    
+    <em><%= f.label :category, "Expected outcome of the ASK?" %></em>
+    <div class="row">
+    	<div class="span1">
+    		<%= f.submit "Advice", class: "btn btn-success" %>
+    	</div>
+    	<div class="span1 offset1">
+    		<%= f.submit "Introduction", class: "btn btn-success" %>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="span1">
+    		<%= f.submit "Help", class: "btn btn-success" %>
+    	</div>
+    	<div class="span1 offset1">
+    		<%= f.submit "Money", class: "btn btn-success" %>
+    	</div>
+    </div>
+    <div class="row">
+    	<div class="span1 offset 1">
+    		<%= f.submit "Don't know", class: "btn btn-link" %>
+    	</div>
+    </div>
+  </div>
+<% end %>

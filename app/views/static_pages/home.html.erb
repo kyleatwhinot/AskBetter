@@ -1,0 +1,46 @@
+<% if signed_in? %>
+  <div class="row">
+    <aside class="span4">
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/stats' %>
+      </section>
+      <section>
+        <%= render 'shared/micropost_form' %>
+      </section>
+    </aside>
+      <div class="span8">
+        <h3>Micropost Feed</h3>
+        <%= render 'shared/feed' %>
+    </div>
+  </div>  
+<% else %>
+<div class="row">
+<div class="span3">
+  <%= render 'shared/contact_title' %>
+  <%= render 'shared/contact_text_long' %>
+  <%# render 'shared/contact_form' %>
+</div>
+<div class="span3">
+  <%= render 'shared/ask_title' %>
+  <%= render 'shared/ask_text' %>
+  <%= render 'shared/ask_text_long' %>
+</div>
+<div class="span3">
+  <h1 class="dow"><% unless day_off?(dft(2)) %><%= dft(2) %><% else %><%= dft(2+3) %><% end %></h1>
+  <hr/>
+  <h2 class="subtitle">Help others</h2 class="subtitle">
+  <p><em>Pay it forward because what goes around comes around.</br></br></em></p>
+  <p class="lead"><% unless day_off?(dft(2)) %><%= "On #{dft(2).capitalize}" %><% else %><%= "On #{dft(2+3).capitalize}" %><% end %> we will introduce you to other entrepreneurs who you might be able to help.</p>
+</div>
+<div class="span3">
+  <h1 class="dow"><% unless day_off?(dft(3)) %><%= dft(3) %><% else %><%= dft(3+3) %><% end %></h1>
+  <hr/>
+  <h2 class="subtitle">ASK Follow-up</h2 class="subtitle">
+  <p><em>Nothing happens easily or automatically. You must follow up.</br></br></em></p>
+  <p class="lead"><% unless day_off?(dft(3)) %><%= "On #{dft(3).capitalize}" %><% else %><%= "On #{dft(3+3).capitalize}" %><% end %> we will remind you to follow-up with the contacts and asks you made recently.</p>
+</div>
+</div>
+<% end %>
